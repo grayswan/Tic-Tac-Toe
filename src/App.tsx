@@ -52,13 +52,14 @@ const App: React.FC = () => {
       }
       if (a.value === b.value && b.value === c.value) {
         setWinner(a.value);
+        break;
       }
     }
   }
 
   const handleClick = (index: number) => {
     if (!activePlayer) {
-      return setErrorMessage('You must choose a side first!')
+      return setErrorMessage('You must choose a side first')
     }
 
     const updatedBoxes: Box[] = [...boxValues];
@@ -90,9 +91,9 @@ const App: React.FC = () => {
           </div>           
         </div>}
       {activePlayer && !winner &&
-      <div>
-        <h4>{`${activePlayer}'s turn!`}</h4>
-      </div>}
+        <div>
+          <h4>{`${activePlayer}'s turn!`}</h4>
+        </div>}
       <div style={styles.board}>
         {boxValues.map((box: Box, index: number) =>
           <button 
